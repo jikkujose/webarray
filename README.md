@@ -1,4 +1,4 @@
-# WebArray Client
+# WebArray
 
 Fast remote arrays. No sign-up, access-controlled, works everywhere.
 
@@ -29,7 +29,9 @@ await webArray.replace("Bye Bye!")
 - Polls
 - Surveys
 
-### Minimal Feedback Example
+### Feedback Example
+
+Just copy/paste this code to a file & open in browser to see it live!
 
 ``` html
 <!DOCTYPE html>
