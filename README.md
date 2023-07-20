@@ -73,3 +73,16 @@ Just copy/paste this code to a file & open in browser to see it live!
   </body>
 </html>
 ```
+
+### Access Control
+
+``` js
+import { WebArray } from "https://cdn.toolbomber.com/js/WebArray.min.js"
+
+const webArray = await WebArray.create("123")
+
+delete webArray.keys.read
+
+console.log(await webArray.read()) // Will cause authorisation error; likewise for other keys
+
+```
