@@ -1,6 +1,6 @@
 # WebArray
 
-Fast remote arrays. Works everywhere, Fine grained access conrols & no sign-ups.
+Fast remote arrays. Works everywhere, fine grained access conrols & no sign-ups.
 
 ## Quick Start
 
