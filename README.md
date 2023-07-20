@@ -31,7 +31,8 @@ await webArray.replace("Bye Bye!")
 
 ### Feedback Example
 
-Just copy/paste this code to a file & open in browser to see it live!
+Just copy/paste this code to a file & open in browser to see it live! Or edit it
+in live in [CodePen](https://codepen.io/jikkuatwork/pen/KKreaMv?editors=1000).
 
 ``` html
 <!DOCTYPE html>
