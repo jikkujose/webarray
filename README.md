@@ -77,12 +77,27 @@ Just copy/paste this code to a file & open in browser to see it live!
 ### Access Control
 
 ``` js
-import { WebArray } from "https://cdn.toolbomber.com/js/WebArray.min.js"
-
 const webArray = await WebArray.create("123")
 
 delete webArray.keys.read
 
 console.log(await webArray.read()) // Will cause authorisation error; likewise for other keys
-
 ```
+
+#### WebArray.generateKeys(seed)
+
+Or `keys` can be independently created and used to initialise the client for
+fine grained access control.
+
+``` js
+const keys = await WebArray.generateKeys("YOUR_UNIQUE_KEY")
+
+delete keys.append
+delete keys.replace
+
+const readOnlyClient = new WebArray(keys)
+```
+
+### Note
+
+- All remote access functions are `async`, do remember to use `await`
