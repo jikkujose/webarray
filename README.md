@@ -2,6 +2,8 @@
 
 Fast remote arrays. Works everywhere, fine grained access conrols & no sign-ups.
 
+![Ruby Demo](./ruby-demo.svg)
+
 ## Quick Start
 
 ``` js
