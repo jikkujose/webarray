@@ -2,9 +2,19 @@
 
 Fast remote arrays. Works everywhere, fine grained access conrols & no sign-ups.
 
+## Available Platforms
+
+- Ruby `gem install webarray`
+- Node `npm install webarray`
+- Python `pip3 install webarray`
+- Web `https://cdn.toolbomber.com/js/WebArray.min.js`
+- Others coming soon
+
+## Ruby Web Demo
+
 ![Ruby Demo](./ruby-demo.svg)
 
-## Quick Start
+## Web Example
 
 ``` js
 import { WebArray } from "https://cdn.toolbomber.com/js/WebArray.min.js"
