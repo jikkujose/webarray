@@ -14,24 +14,41 @@ Fast remote arrays. Works everywhere, fine grained access conrols & no sign-ups.
 
 ![Ruby Demo](./ruby-demo.svg)
 
-## Web Example
+## JS Console Example
 
-``` js
-import { WebArray } from "https://cdn.toolbomber.com/js/WebArray.min.js"
+Open a new tab and copy each of the following lines:
 
-const webArray = WebArray.create("REPLACE_WITH_YOUR_SEED")
+#### Import library
 
-await webArray.append("Hello WebArray")
+`import("https://cdn.toolbomber.com/js/WebArray.min.js")`
 
-console.log(await webArray.read())
+#### Generate keys
 
-await webArray.replace("Bye Bye!")
-```
+`const keys = await WebArray.generateKeys("USE_YOUR_SEED")`
+
+#### Create instance by passing keys
+
+`const wa = new WebArray(keys)`
+
+Note: You can skip any of the `read`, `append` or `replace` keys to restrict
+the instance from doing the corresponding action.
+
+#### Append
+
+`await wa.append("Mango")`
+
+#### Read
+
+`console.log(await wa.read())`
+
+### Replace
+
+`await wa.replace('Bye!')`
 
 ### Features
 
 - It can do `read()`, `append(item)` & `replace(item)`
-- Access can be restrcted by removing the specific keys in `webArray.keys`
+- Access can be restricted by removing the specific keys in `webArray.keys`
 
 ### Use cases
 
@@ -40,6 +57,9 @@ await webArray.replace("Bye Bye!")
 - Chat Systems
 - Polls
 - Surveys
+- Feedback Collectors
+- Leaderboards
+- Status pages
 
 ### Feedback Example
 
@@ -89,17 +109,16 @@ in live in [CodePen](https://codepen.io/jikkuatwork/pen/KKreaMv?editors=1000).
 
 ### Access Control
 
-``` js
-const webArray = await WebArray.create("123")
+WebArray instance requires the `read`, `append` or `replace` keys to do the
+specific actions. Initialising WebArray a keys object without any one of the
+access keys prevents it from doing it.
 
-delete webArray.keys.read
-
-console.log(await webArray.read()) // Will cause authorisation error; likewise for other keys
-```
+Try creating the keys locally, save the seed and use the specific keys required
+in the page.
 
 #### WebArray.generateKeys(seed)
 
-Or `keys` can be independently created and used to initialise the client for
+For instance `keys` can be independently created and used to initialise the client for
 fine grained access control.
 
 ``` js
