@@ -20,30 +20,42 @@ Open a new tab and copy each of the following lines:
 
 #### Import library
 
-`import("https://cdn.toolbomber.com/js/WebArray.min.js")`
+``` js
+import("https://cdn.toolbomber.com/js/WebArray.min.js")
+```
 
 #### Generate keys
 
-`const keys = await WebArray.generateKeys("USE_YOUR_SEED")`
+``` js
+const keys = await WebArray.generateKeys("USE_YOUR_SEED")
+```
 
 #### Create instance by passing keys
 
-`const wa = new WebArray(keys)`
+``` js
+const wa = new WebArray(keys)
+```
 
 Note: You can skip any of the `read`, `append` or `replace` keys to restrict
 the instance from doing the corresponding action.
 
 #### Append
 
-`await wa.append("Mango")`
+``` js
+await wa.append("Mango")
+```
 
 #### Read
 
-`console.log(await wa.read())`
+``` js
+console.log(await wa.read())
+```
 
 ### Replace
 
-`await wa.replace('Bye!')`
+``` js
+await wa.replace('Bye!')
+```
 
 ### Features
 
