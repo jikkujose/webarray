@@ -177,3 +177,5 @@ const readOnlyClient = new WebArray(keys)
 - Anyone with the seed can read/modify the data
 - Not intended to be used for anything critical or even in production
 - Planning to open source the code in future
+- WebArray will always return an array, no matter what is used to replace it
+  will all be put into an array
