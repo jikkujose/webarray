@@ -14,7 +14,7 @@ Fast remote arrays. Works everywhere, fine grained access conrols & no sign-ups.
 
 ![Ruby Demo](./ruby-demo.svg)
 
-## Quick Example
+## Quick Start
 
 Open a broswer console & follow along:
 
@@ -74,52 +74,6 @@ await wa.replace('Bye!')
 - Status pages
 
 ## Examples
-
-### Feedback
-
-Just copy/paste this code to a file & open in browser to see it live! Or edit it
-in live in [CodePen](https://codepen.io/jikkuatwork/pen/KKreaMv?editors=1000).
-
-``` html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
-    />
-    <script type="module">
-      import { WebArray } from "https://cdn.toolbomber.com/js/WebArray.min.js"
-      window.webArray = await WebArray.create("YOUR_UNIQUE_KEY")
-
-      window.update = async () => {
-        const history = (await webArray.read()).join("\n")
-        document.querySelector("#fbs").innerHTML = history
-      }
-
-      window.handleSubmit = async () => {
-        const input = document.querySelector("#fbi")
-        await webArray.append(input.value)
-        input.value = ""
-        await update()
-      }
-
-      update()
-    </script>
-  </head>
-  <body>
-    <main class="container">
-      <div>
-        <pre id="fbs"></pre>
-      </div>
-      <form onsubmit="event.preventDefault(); return false;">
-        <textarea id="fbi" placeholder="Your feedback" rows="2"></textarea>
-        <button type="button" onclick="handleSubmit()">Send</button>
-      </form>
-    </main>
-  </body>
-</html>
-```
 
 ### Shortest Backendless Code
 
