@@ -77,28 +77,40 @@ await wa.replace('Bye!')
 
 ### Shortest Backendless Code
 
-Data lister in 17 lines of code!
+Full frontend and backend app in 29 lines of readable code!
 
-Edit it live in [CodePen](https://codepen.io/jikkuatwork/pen/dyQjNGw?editors=1000)
+Edit it live in [CodePen](https://codepen.io/jikkuatwork/pen/GRwBzBY?editors=1000)
 
 ``` html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css">
-<script src="https://unpkg.com/alpinejs" defer></script>
-
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@1.5.10/css/pico.min.css"
+/>
 <script src="https://cdn.toolbomber.com/js/WebArray.min.js"></script>
 
-<div
-  x-data="{ items: []}"
-  x-init="items = await (await WebArray.create('planets')).read()"
->
-  <table role="grid">
-    <template x-for="item in items" :key="item.updatedAt">
+<script type="module">
+  const fruits = await (await WebArray.create("fruits")).read()
+
+  fruits.forEach(fruit =>
+    document.querySelector("tbody").insertAdjacentHTML(
+      "beforeend",
+      `
       <tr>
-        <th x-text="item.item"></th>
-        <th x-text="new Date(item.updatedAt * 1000).toLocaleString()"></th></tr
-    ></template>
-  </table>
-</div>
+        <td>${fruit.name}</td>
+        <td>${fruit.updatedAt}</td>
+      </tr>
+    `
+    )
+  )
+</script>
+
+<table role="grid">
+  <tr>
+    <th>Fruit</th>
+    <th>Unix Time</th>
+    <tbody></tbody>
+  </tr>
+</table>
 ```
 
 ## Access Control
